@@ -47,6 +47,7 @@ a { color: inherit; }
 .brand { font-family: "Bodoni Moda", Didot, Georgia, serif; font-size: 1.35rem; text-decoration: none; }
 .back { font-size: .95rem; font-weight: 500; text-decoration: none; }
 .back:hover { color: var(--accent); }
+.nav { display: flex; gap: 1.25rem; align-items: center; }
 
 main { width: min(560px, 100% - 2.5rem); margin-inline: auto; padding-block: clamp(1.5rem, 5vw, 3.5rem) 4rem; }
 h1 {
@@ -94,7 +95,10 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-colo
 
 <header class="site-header">
   <a class="brand" href="index.html">NicVisions</a>
-  <a class="back" href="show-up-package-website.html">Back to the package</a>
+  <nav class="nav" aria-label="Main">
+    <a class="back" href="index.html">Home</a>
+    <a class="back" href="show-up-package-website.html">Back to the package</a>
+  </nav>
 </header>
 
 <main>
@@ -173,7 +177,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-colo
       const done = document.getElementById("done-view");
       done.hidden = false; done.focus();
     } catch {
-      showError("Your details didn't send. Check your connection and try again, or email [YOUR EMAIL].");
+      showError("Your details didn't send. Check your connection and try again, or message me on Instagram @nicvisions_photography.");
     } finally {
       btn.disabled = false; btn.textContent = "Claim my spot";
     }
