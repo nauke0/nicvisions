@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NicVisions Photography | Female Fitness Photography Adelaide</title>
+<meta name="description" content="NicVisions Photography. Female fitness and competition photography in Adelaide, South Australia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<!--
+  PHOTOS: replace each <div class="photo ..."> placeholder with your own image, e.g.
+  <img class="photo arch" src="images/hero-1.jpg" alt="Bikini competitor posing in studio">
+  Keep the class names so the shapes stay the same.
+  CONTACT: search for [YOUR EMAIL] and [YOUR INSTAGRAM] and replace them.
+-->
+<style>
+:root {
+  --bg: #f4f2ee; --surface: #ffffff; --ink: #1f1412; --muted: #4e3e39;
+  --accent: #8e3b4a; --accent-ink: #ffffff; --bronze: #7a5640;
+  --line: #cfc2b8; --soft: #e8d9cf;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+    --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+    --line: #5a4843; --soft: #352826;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+  --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+  --line: #5a4843; --soft: #352826;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem; line-height: 1.6;
+}
+img { max-width: 100%; display: block; object-fit: cover; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: min(1180px, 100% - 2.5rem); margin-inline: auto; }
+.serif { font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500; }
+
+/* Header */
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; }
+.brand { font-family: "Bodoni Moda", Didot, Georgia, serif; font-size: 1.35rem; text-decoration: none; }
+.nav { display: flex; gap: 1.6rem; align-items: center; }
+.nav a { text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav a:not(.btn):hover { color: var(--accent); }
+.btn {
+  display: inline-block; background: var(--accent); color: var(--accent-ink);
+  padding: .85rem 1.6rem; border-radius: 999px; font-weight: 700; text-decoration: none;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn.small { padding: .55rem 1.15rem; font-size: .9rem; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+
+/* Photo placeholders */
+.photo {
+  background:
+    radial-gradient(120% 80% at 50% 8%, rgba(255,255,255,.3), transparent 60%),
+    linear-gradient(160deg, #d9a9a0, #a8695f 55%, #6e4a3a);
+  color: #fff6f2; display: grid; place-items: center; text-align: center;
+  font-size: .85rem; padding: 1rem; width: 100%;
+}
+.arch { border-radius: 999px 999px 16px 16px; }
+
+/* Hero */
+.hero { padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5.5rem); text-align: center; }
+.hero h1 {
+  font-size: clamp(3.2rem, 11vw, 8.5rem); line-height: .9; letter-spacing: -.025em;
+  margin: 0 auto .9rem; max-width: 12ch;
+}
+.hero h1 em { font-style: italic; color: var(--bronze); }
+.hero .tag { color: var(--muted); font-size: 1.15rem; margin: 0 0 2rem; }
+.hero .ctas { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+.arches { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: clamp(.75rem, 2vw, 1.5rem); align-items: end; }
+.arches .photo:nth-child(1), .arches .photo:nth-child(3) { aspect-ratio: 3 / 4.4; }
+.arches .photo:nth-child(2) { aspect-ratio: 3 / 4.6; }
+
+/* Sections */
+section.band { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem; }
+
+/* Featured package */
+.feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.feature .photo { aspect-ratio: 4 / 5; border-radius: 16px; }
+.feature p { color: var(--muted); max-width: 30rem; margin: 0 0 1.75rem; font-size: 1.1rem; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+.services .photo { aspect-ratio: 1 / 1.2; margin-bottom: 1.1rem; }
+.services h3 { margin: 0 0 .3rem; font-size: 1.15rem; }
+.services p { margin: 0; color: var(--muted); font-size: 1rem; }
+
+/* Quote */
+.quote { text-align: center; }
+.quote blockquote { margin: 0 auto; max-width: 30ch; font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.25; font-style: italic; }
+.quote cite { display: block; margin-top: 1.25rem; font-style: normal; color: var(--muted); font-size: .95rem; }
+
+/* Closing CTA */
+.closing { background: var(--soft); text-align: center; border-top: none; }
+.closing p { color: var(--muted); margin: 0 0 2rem; }
+
+.site-footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: .92rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .feature { grid-template-columns: 1fr; }
+  .services { grid-template-columns: 1fr 1fr; }
+  .services > div:last-child { grid-column: span 2; max-width: 50%; justify-self: center; }
+}
+@media (max-width: 560px) {
+  .nav a:not(.btn) { display: none; }
+  .arches { grid-template-columns: 1fr 1fr; }
+  .arches .photo:nth-child(3) { display: none; }
+  .services { grid-template-columns: 1fr; }
+  .services > div:last-child { grid-column: auto; max-width: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">NicVisions</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Shoots</a>
+      <a href="show-up-package-website.html">The Show Up Package</a>
+      <a class="btn small" href="show-up-package-website.html#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="serif">Strong is <em>beautiful.</em></h1>
+      <p class="tag">Female fitness photography in Adelaide.</p>
+      <div class="ctas">
+        <a class="btn" href="show-up-package-website.html#book">Book your shoot</a>
+        <a class="btn ghost" href="#work">See the shoots</a>
+      </div>
+      <div class="arches">
+        <div class="photo arch" role="img" aria-label="Photo placeholder">Photo</div>
+        <div class="photo arch" role="img" aria-label="Photo placeholder">Hero photo</div>
+        <div class="photo arch" role="img" aria-label="Photo placeholder">Photo</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap feature">
+      <div class="photo" role="img" aria-label="Show Up Package photo placeholder">Competition photo</div>
+      <div>
+        <h2 class="serif">The Show Up Package</h2>
+        <p>For bikini and WBFF competitors. Hair, makeup, wardrobe and posing, all handled. You just show up.</p>
+        <a class="btn" href="show-up-package-website.html">Explore the package</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="wrap">
+      <h2 class="serif">Shoots</h2>
+      <div class="services">
+        <div>
+          <div class="photo arch" role="img" aria-label="Competition shoot placeholder">Photo</div>
+          <h3>Competition</h3>
+          <p>Your peak, captured right after your show.</p>
+        </div>
+        <div>
+          <div class="photo arch" role="img" aria-label="Fitness portrait placeholder">Photo</div>
+          <h3>Fitness portraits</h3>
+          <p>Celebrate your strength, in or out of season.</p>
+        </div>
+        <div>
+          <div class="photo arch" role="img" aria-label="Brand content placeholder">Photo</div>
+          <h3>Coaches and brands</h3>
+          <p>Content for your feed, website and sponsors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band quote">
+    <div class="wrap">
+      <!-- Replace with a real client testimonial -->
+      <blockquote class="serif">"I've never felt so confident in front of a camera."</blockquote>
+      <cite>Client name, WBFF Diva Bikini</cite>
+    </div>
+  </section>
+
+  <section class="band closing">
+    <div class="wrap">
+      <h2 class="serif">Your turn.</h2>
+      <p>Limited dates each season.</p>
+      <a class="btn" href="show-up-package-website.html#book">Book your shoot</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>NicVisions Photography, Adelaide, South Australia</span>
+    <span><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a> &nbsp;|&nbsp; <a href="https://instagram.com/[YOUR INSTAGRAM]">[YOUR INSTAGRAM]</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

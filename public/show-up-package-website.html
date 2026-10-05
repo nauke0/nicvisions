@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Show Up Package | [YOUR NAME] Photography</title>
+<meta name="description" content="A done-for-you post-show photoshoot for bikini and WBFF competitors. Hair, makeup, wardrobe and posing handled. You just show up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--
+  ===================== SETUP (edit these three things) =====================
+  1. Your details: search this file for [YOUR NAME], [YOUR EMAIL] and [YOUR INSTAGRAM].
+  2. Booking form: create a free form at https://formspree.io, copy your form
+     endpoint (looks like https://formspree.io/f/abcdwxyz) and paste it into
+     FORM_ENDPOINT in the CONFIG near the bottom of this file. Submissions are
+     emailed to you.
+  3. Calendar: in Google Calendar, click Create > Appointment schedule, set your
+     available shoot slots, then open the schedule > Share > Website embed >
+     Inline. Copy the URL inside src="..." and paste it into CALENDAR_URL in
+     the CONFIG. Bookings land straight in your Google Calendar.
+  4. Photos: replace the photo placeholders (search for "photo-slot") with your
+     own images, e.g. <img src="your-photo.jpg" alt="...">.
+  ===========================================================================
+-->
+
+<style>
+:root {
+  /* 2026 palette: Cloud Dancer white, warm mocha, dusty rose, biscuit */
+  --bg: #f4f2ee;
+  --surface: #ffffff;
+  --ink: #1f1412;
+  --muted: #4e3e39;
+  --accent: #8e3b4a;
+  --accent-ink: #ffffff;
+  --bronze: #7a5640;
+  --line: #cfc2b8;
+  --soft: #e8d9cf;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+    --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+    --line: #5a4843; --soft: #352826;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+  --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+  --line: #5a4843; --soft: #352826;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem; line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; }
+.brand { font-family: "Bodoni Moda", Didot, Georgia, serif; font-size: 1.3rem; font-weight: 500; text-decoration: none; }
+.nav { display: flex; gap: 1.5rem; align-items: center; }
+.nav a { text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav a:not(.btn):hover { color: var(--accent); }
+
+.btn {
+  display: inline-block; background: var(--accent); color: var(--accent-ink);
+  padding: .8rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none;
+  border: none; font-family: inherit; font-size: 1rem; cursor: pointer;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.small { padding: .55rem 1.1rem; font-size: .9rem; }
+
+/* Hero */
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 {
+  font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500;
+  font-size: clamp(3rem, 8.5vw, 6.4rem); line-height: .95; letter-spacing: -.02em; margin: 0 0 1.5rem;
+}
+.hero h1 span { display: block; font-style: italic; color: var(--bronze); }
+.hero p { max-width: 34rem; color: var(--muted); font-size: 1.15rem; margin: 0 0 2rem; }
+
+.photo-slot {
+  background:
+    radial-gradient(120% 80% at 50% 10%, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(160deg, #d9a9a0, #a8695f 55%, #6e4a3a);
+  color: #fff3ec; display: grid; place-items: center; text-align: center;
+  font-size: .9rem; padding: 1.5rem; overflow: hidden;
+}
+.photo-slot.arch { aspect-ratio: 3 / 4; border-radius: 999px 999px 18px 18px; }
+
+/* Sections */
+section.band { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid var(--line); }
+h2 {
+  font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; margin: 0 0 1.25rem;
+}
+.lead { max-width: 40rem; color: var(--muted); margin: 0 0 2.5rem; }
+
+.included { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
+.included h3 { font-size: 1.1rem; margin: 0 0 .4rem; }
+.included p { margin: 0; color: var(--muted); font-size: 1rem; }
+.included div { border-top: 2px solid var(--bronze); padding-top: 1rem; }
+
+.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; display: grid; gap: 0; max-width: 46rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.steps li::before { content: counter(s); font-family: "Bodoni Moda", Georgia, serif; font-size: 2rem; line-height: 1; color: var(--accent); }
+.steps strong { display: block; }
+.steps span { color: var(--muted); }
+
+.cta-band { text-align: center; }
+.cta-band .lead { margin-inline: auto; }
+
+.site-footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: .9rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* Booking page */
+.book-head { padding-block: clamp(2.5rem, 6vw, 4rem) 1.5rem; }
+.book-head h1 { font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1; margin: 0 0 1rem; }
+.book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding-bottom: 4rem; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.25rem, 3vw, 2rem); }
+.panel h2 { font-size: 1.7rem; margin-bottom: .5rem; }
+.panel > p { color: var(--muted); margin-top: 0; }
+
+fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+legend { font-weight: 700; font-size: 1.05rem; margin-bottom: .75rem; padding: 0; }
+.field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+label { font-size: .92rem; font-weight: 500; }
+.req { color: var(--accent); }
+input, select, textarea {
+  font: inherit; font-size: 1rem; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: .7rem .8rem; width: 100%;
+}
+textarea { min-height: 6rem; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.checks { display: flex; flex-wrap: wrap; gap: .5rem; }
+.checks label {
+  display: inline-flex; align-items: center; gap: .4rem; border: 1px solid var(--line);
+  border-radius: 999px; padding: .4rem .9rem; cursor: pointer; background: var(--bg);
+}
+.checks input { width: auto; accent-color: var(--accent); }
+.consent { display: flex; gap: .6rem; align-items: flex-start; font-size: .92rem; color: var(--muted); margin-bottom: 1.25rem; }
+.consent input { width: auto; margin-top: .3rem; accent-color: var(--accent); }
+.status { margin-top: 1rem; padding: .9rem 1rem; border-radius: 10px; display: none; }
+.status.show { display: block; }
+.status.ok { background: var(--soft); border-left: 4px solid var(--bronze); }
+.status.err { background: var(--soft); border-left: 4px solid var(--accent); }
+
+.calendar-frame { width: 100%; height: 640px; border: 0; border-radius: 12px; background: var(--bg); }
+.setup-note { background: var(--soft); border-radius: 12px; padding: 1.25rem; font-size: .95rem; }
+.setup-note ol { padding-left: 1.2rem; margin: .5rem 0 0; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .book-grid { grid-template-columns: 1fr; }
+  .hero .photo-slot { max-width: 360px; }
+  .included { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .included, .row { grid-template-columns: 1fr; }
+  .nav a:not(.btn) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#home">[YOUR NAME] Photography</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#included">What's included</a>
+      <a href="#how">How it works</a>
+      <a class="btn small" href="#book">Book your shoot</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HOME PAGE ============ -->
+<main id="page-home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>You just show up. <span>I handle the rest.</span></h1>
+        <p>You spent months in prep and you've done enough thinking. The Show Up Package is a done-for-you post-show shoot for bikini and WBFF competitors. I plan your looks, shop your wardrobe, book your glam, and direct every pose.</p>
+        <a class="btn" href="#book">Claim your post-show spot</a>
+      </div>
+      <!-- Replace this div with your hero photo: <img class="photo-slot arch" src="hero.jpg" alt="Competitor posing after her show"> -->
+      <div class="photo-slot arch" role="img" aria-label="Hero photo placeholder">Your hero photo here</div>
+    </div>
+  </section>
+
+  <section class="band" id="included">
+    <div class="wrap">
+      <h2>Everything is taken care of</h2>
+      <p class="lead">No outfit stress, no posing panic, no wondering if you'll look as good as you did on stage.</p>
+      <div class="included">
+        <div><h3>Hair and makeup</h3><p>I book it for you. Bring your favorite artist, or leave it with me and I'll choose someone great for you.</p></div>
+        <div><h3>Custom wardrobe, shopped for you</h3><p>I build your looks after a short style call, then do the shopping. Everything is ready on shoot day.</p></div>
+        <div><h3>Guided posing</h3><p>I direct every pose and adapt your stage poses for the camera, so you never wonder what to do with your hands.</p></div>
+        <div><h3>Timed to your peak</h3><p>Your shoot is locked in for the window right after your show, while your conditioning is at its best.</p></div>
+        <div><h3>Fast, edited images</h3><p>Retouched photos ready to share with sponsors, clients, and everyone who watched you prep.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><div><strong>Book 8 to 12 weeks before your show</strong><span>Pick your date and tell me about your show.</span></div></li>
+        <li><div><strong>Have a 20-minute style call</strong><span>Your vibe, your sizes, what you love. It's your last decision.</span></div></li>
+        <li><div><strong>Approve your look board</strong><span>One tap and it's done.</span></div></li>
+        <li><div><strong>Show up</strong><span>Glam, outfits and posing are all handled.</span></div></li>
+        <li><div><strong>Receive your gallery</strong><span>Edited images, ready to download and share.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band cta-band">
+    <div class="wrap">
+      <h2>Spots are limited for every show</h2>
+      <p class="lead">Only a few shoots fit in the short window after each show, so dates go fast.</p>
+      <a class="btn" href="#book">Book your shoot</a>
+    </div>
+  </section>
+</main>
+
+<!-- ============ BOOKING PAGE ============ -->
+<main id="page-book" hidden>
+  <div class="wrap book-head">
+    <h1>Book your Show Up shoot</h1>
+    <p class="lead">Choose a shoot time in the calendar, then fill in your details so I can start planning your looks.</p>
+  </div>
+
+  <div class="wrap book-grid">
+    <div class="panel">
+      <h2>Pick your shoot time</h2>
+      <p>Choose a slot as close to the day after your show as you can.</p>
+      <iframe id="calendar" class="calendar-frame" title="Available shoot times" hidden></iframe>
+      <div id="calendar-setup" class="setup-note">
+        <strong>Calendar not connected yet.</strong>
+        <ol>
+          <li>In Google Calendar, choose Create, then Appointment schedule.</li>
+          <li>Set your available shoot slots and save.</li>
+          <li>Open the schedule, choose Share, then Website embed, then Inline.</li>
+          <li>Paste the link from inside <code>src="..."</code> into CALENDAR_URL in this file.</li>
+        </ol>
+      </div>
+    </div>
+
+    <form class="panel" id="booking-form" novalidate>
+      <h2>Your details</h2>
+      <p>This helps me plan your wardrobe, glam and posing.</p>
+
+      <fieldset>
+        <legend>About you</legend>
+        <div class="row">
+          <div class="field"><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="instagram">Instagram</label><input id="instagram" name="instagram" placeholder="@yourhandle"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your show</legend>
+        <div class="row">
+          <div class="field">
+            <label for="division">Division <span class="req">*</span></label>
+            <select id="division" name="division" required>
+              <option value="">Choose one</option>
+              <option>Bikini</option>
+              <option>WBFF Diva Bikini</option>
+              <option>WBFF Diva Fitness</option>
+              <option>WBFF Diva Wellness</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="federation">Federation</label><input id="federation" name="federation" placeholder="e.g. WBFF, ICN, ANB"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="show">Show name <span class="req">*</span></label><input id="show" name="show_name" required></div>
+          <div class="field"><label for="showdate">Show date <span class="req">*</span></label><input id="showdate" name="show_date" type="date" required></div>
+        </div>
+        <div class="field"><label for="shootdate">Preferred shoot date</label><input id="shootdate" name="preferred_shoot_date" type="date"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your wardrobe</legend>
+        <div class="row">
+          <div class="field"><label for="top">Top size</label><input id="top" name="top_size"></div>
+          <div class="field"><label for="bottom">Bottom size</label><input id="bottom" name="bottom_size"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="dress">Dress size</label><input id="dress" name="dress_size"></div>
+          <div class="field"><label for="shoe">Shoe size</label><input id="shoe" name="shoe_size"></div>
+        </div>
+        <div class="field">
+          <span style="font-size:.92rem;font-weight:500">The vibe you want (choose any)</span>
+          <div class="checks">
+            <label><input type="checkbox" name="vibe" value="Athletic and powerful"> Athletic and powerful</label>
+            <label><input type="checkbox" name="vibe" value="Glamorous"> Glamorous</label>
+            <label><input type="checkbox" name="vibe" value="Soft and feminine"> Soft and feminine</label>
+            <label><input type="checkbox" name="vibe" value="Edgy"> Edgy</label>
+          </div>
+        </div>
+        <div class="field"><label for="likes">Colors or styles you love or avoid</label><textarea id="likes" name="style_notes"></textarea></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Anything else</legend>
+        <div class="field"><label for="glam">Hair and makeup notes</label><textarea id="glam" name="glam_notes" placeholder="Allergies, hair length, looks you love"></textarea></div>
+        <div class="field">
+          <label for="heard">How did you hear about me?</label>
+          <select id="heard" name="heard_about">
+            <option value="">Choose one</option>
+            <option>Instagram</option><option>My coach</option><option>A friend or teammate</option><option>Google</option><option>Other</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <label class="consent"><input type="checkbox" id="consent" name="consent" required> I understand my booking is confirmed once my deposit is paid. <span class="req">*</span></label>
+
+      <button class="btn" type="submit" id="submit-btn">Send my booking details</button>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>[YOUR NAME] Photography</span>
+    <span>[YOUR EMAIL] &nbsp;|&nbsp; [YOUR INSTAGRAM]</span>
+  </div>
+</footer>
+
+<script>
+  /* ===================== CONFIG ===================== */
+  const CONFIG = {
+    FORM_ENDPOINT: "https://formspree.io/f/YOUR_FORM_ID",
+    CALENDAR_URL: "PASTE_YOUR_GOOGLE_APPOINTMENT_SCHEDULE_URL_HERE"
+  };
+  /* ================================================== */
+
+  // Simple two-page routing: #book shows the booking page, anything else shows home.
+  const home = document.getElementById("page-home");
+  const book = document.getElementById("page-book");
+  function route() {
+    const h = location.hash;
+    const onBook = h === "#book";
+    book.hidden = !onBook;
+    home.hidden = onBook;
+    if (onBook) { window.scrollTo(0, 0); loadCalendar(); }
+    else if (h && h !== "#home") {
+      const el = document.querySelector(h);
+      if (el) el.scrollIntoView();
+    } else { window.scrollTo(0, 0); }
+  }
+  window.addEventListener("hashchange", route);
+
+  let calendarLoaded = false;
+  function loadCalendar() {
+    if (calendarLoaded) return;
+    const url = CONFIG.CALENDAR_URL;
+    if (url.startsWith("https://calendar.google.com/")) {
+      const frame = document.getElementById("calendar");
+      frame.src = url;
+      frame.hidden = false;
+      document.getElementById("calendar-setup").hidden = true;
+      calendarLoaded = true;
+    }
+  }
+
+  // Booking form
+  const form = document.getElementById("booking-form");
+  const statusBox = document.getElementById("status");
+  const submitBtn = document.getElementById("submit-btn");
+
+  function showStatus(msg, ok) {
+    statusBox.textContent = msg;
+    statusBox.className = "status show " + (ok ? "ok" : "err");
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const missing = [...form.querySelectorAll("[required]")].filter(el =>
+      el.type === "checkbox" ? !el.checked : !el.value.trim()
+    );
+    if (missing.length) {
+      showStatus("Please fill in the fields marked with *.", false);
+      missing[0].focus();
+      return;
+    }
+    const email = form.email.value.trim();
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      showStatus("Check your email address. It should look like name@example.com.", false);
+      form.email.focus();
+      return;
+    }
+    if (CONFIG.FORM_ENDPOINT.includes("YOUR_FORM_ID")) {
+      showStatus("The booking form isn't connected yet. Add your Formspree link to FORM_ENDPOINT in this file.", false);
+      return;
+    }
+
+    const data = new FormData(form);
+    const vibes = data.getAll("vibe");
+    data.delete("vibe");
+    data.append("vibe", vibes.join(", ") || "Not specified");
+    data.append("_subject", "New Show Up Package booking: " + form.name.value.trim());
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    try {
+      const res = await fetch(CONFIG.FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error("Request failed");
+      form.reset();
+      showStatus("Booking details sent. I'll be in touch within 48 hours to confirm your date and deposit.", true);
+    } catch (err) {
+      showStatus("Your details didn't send. Check your connection and try again, or email [YOUR EMAIL].", false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send my booking details";
+    }
+  });
+
+  route();
+</script>
+</body>
+</html>

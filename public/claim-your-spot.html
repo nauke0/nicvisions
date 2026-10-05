@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claim Your Spot | NicVisions Photography</title>
+<meta name="description" content="Claim your Show Up Package shoot with NicVisions Photography in Adelaide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<!--
+  SETUP: paste your Formspree form endpoint (https://formspree.io/f/xxxxxxx)
+  into FORM_ENDPOINT near the bottom of this file. Each claim is emailed to you.
+  You can use the same Formspree form as book.html, or a separate one.
+-->
+<style>
+:root {
+  --bg: #f4f2ee; --surface: #ffffff; --ink: #1f1412; --muted: #4e3e39;
+  --accent: #8e3b4a; --accent-ink: #ffffff; --bronze: #7a5640;
+  --line: #cfc2b8; --soft: #e8d9cf;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+    --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+    --line: #5a4843; --soft: #352826;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1312; --surface: #2a1f1d; --ink: #fbf7f3; --muted: #dccdc5;
+  --accent: #f0b3bc; --accent-ink: #1a1312; --bronze: #e3c2a6;
+  --line: #5a4843; --soft: #352826;
+}
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem; line-height: 1.6;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.site-header { width: min(1100px, 100% - 2.5rem); margin-inline: auto; display: flex; justify-content: space-between; align-items: center; padding-block: 1.25rem; }
+.brand { font-family: "Bodoni Moda", Didot, Georgia, serif; font-size: 1.35rem; text-decoration: none; }
+.back { font-size: .95rem; font-weight: 500; text-decoration: none; }
+.back:hover { color: var(--accent); }
+
+main { width: min(560px, 100% - 2.5rem); margin-inline: auto; padding-block: clamp(1.5rem, 5vw, 3.5rem) 4rem; }
+h1 {
+  font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500;
+  font-size: clamp(2.6rem, 8vw, 4rem); line-height: .98; letter-spacing: -.02em; margin: 0 0 .75rem;
+}
+.intro { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
+
+.card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 22px; padding: clamp(1.4rem, 4vw, 2.2rem); }
+form { display: grid; gap: 1.2rem; }
+.field { display: flex; flex-direction: column; gap: .4rem; }
+label { font-weight: 700; font-size: 1rem; }
+.opt { font-weight: 400; color: var(--muted); font-size: .9rem; }
+input {
+  font: inherit; font-size: 1.1rem; color: var(--ink); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 14px; padding: .95rem 1rem; width: 100%;
+  min-height: 3.3rem;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.row { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1rem; }
+
+.btn {
+  width: 100%; background: var(--accent); color: var(--accent-ink); border: none;
+  padding: 1.1rem 1.5rem; border-radius: 999px; font: inherit; font-size: 1.1rem; font-weight: 700;
+  cursor: pointer; margin-top: .4rem;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.note { text-align: center; color: var(--muted); font-size: .92rem; margin: .25rem 0 0; }
+
+.status { display: none; padding: .9rem 1rem; border-radius: 12px; background: var(--soft); border-left: 4px solid var(--accent); }
+.status.show { display: block; }
+
+.done { text-align: center; }
+.done h2 { font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500; font-size: clamp(2.4rem, 7vw, 3.4rem); margin: 0 0 .75rem; line-height: 1; }
+.done p { color: var(--muted); margin: 0 0 1.5rem; }
+.done a { font-weight: 700; color: var(--accent); }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 480px) { .row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">NicVisions</a>
+  <a class="back" href="show-up-package-website.html">Back to the package</a>
+</header>
+
+<main>
+  <div id="form-view">
+    <h1>Claim your spot.</h1>
+    <p class="intro">Takes 30 seconds. I'll handle everything from here.</p>
+
+    <div class="card">
+      <form id="claim-form" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Mobile <span class="opt">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="showdate">Show date</label>
+          <input id="showdate" name="show_date" type="date" required>
+        </div>
+
+        <button class="btn" type="submit" id="submit-btn">Claim my spot</button>
+        <p class="note">No payment now. I'll be in touch within 48 hours to confirm.</p>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="done" id="done-view" hidden tabindex="-1">
+    <h2>Your spot is claimed.</h2>
+    <p>I'll be in touch within 48 hours to lock in your date. All you need to do now is focus on your prep.</p>
+    <a href="show-up-package-website.html">Back to the package</a>
+  </div>
+</main>
+
+<script>
+  /* ===================== CONFIG ===================== */
+  const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  /* ================================================== */
+
+  const form = document.getElementById("claim-form");
+  const statusBox = document.getElementById("status");
+  const btn = document.getElementById("submit-btn");
+  form.show_date.min = new Date().toISOString().slice(0, 10);
+
+  function showError(msg, el) {
+    statusBox.textContent = msg;
+    statusBox.className = "status show";
+    if (el) el.focus();
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const missing = [...form.querySelectorAll("[required]")].find(el => !el.value.trim());
+    if (missing) return showError("Please fill in " + missing.labels[0].textContent.trim().toLowerCase() + ".", missing);
+    if (!/^\S+@\S+\.\S+$/.test(form.email.value.trim())) return showError("Check your email address. It should look like name@example.com.", form.email);
+    if (FORM_ENDPOINT.includes("YOUR_FORM_ID")) return showError("This form isn't connected yet. Add your Formspree link to FORM_ENDPOINT in this file.");
+
+    const data = new FormData();
+    data.append("Name", document.getElementById("name").value.trim());
+    data.append("email", form.email.value.trim());
+    data.append("Mobile", form.phone.value.trim() || "Not given");
+    data.append("Show date", form.show_date.value);
+    data.append("_subject", "Show Up Package spot claimed: " + document.getElementById("name").value.trim());
+
+    btn.disabled = true; btn.textContent = "Claiming...";
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error();
+      document.getElementById("form-view").hidden = true;
+      const done = document.getElementById("done-view");
+      done.hidden = false; done.focus();
+    } catch {
+      showError("Your details didn't send. Check your connection and try again, or email [YOUR EMAIL].");
+    } finally {
+      btn.disabled = false; btn.textContent = "Claim my spot";
+    }
+  });
+</script>
+</body>
+</html>
