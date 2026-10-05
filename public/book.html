@@ -122,7 +122,7 @@ textarea { min-height: 8rem; resize: vertical; }
 }
 @media (max-width: 520px) {
   .row { grid-template-columns: 1fr; }
-  .nav a:not(:last-child) { display: none; }
+  .nav a:not(:last-child):not(.home) { display: none; }
 }
 </style>
 </head>
@@ -132,6 +132,7 @@ textarea { min-height: 8rem; resize: vertical; }
   <div class="wrap">
     <a class="brand" href="index.html">NicVisions</a>
     <nav class="nav" aria-label="Main">
+      <a class="home" href="index.html">Home</a>
       <a href="index.html#work">Shoots</a>
       <a href="show-up-package-website.html">The Show Up Package</a>
     </nav>
@@ -199,7 +200,7 @@ textarea { min-height: 8rem; resize: vertical; }
 <footer class="site-footer">
   <div class="wrap">
     <span>NicVisions Photography, Adelaide, South Australia</span>
-    <span><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a> &nbsp;|&nbsp; <a href="https://instagram.com/[YOUR INSTAGRAM]">[YOUR INSTAGRAM]</a></span>
+    <span><a href="https://instagram.com/nicvisions_photography">@nicvisions_photography</a></span>
   </div>
 </footer>
 
@@ -280,7 +281,7 @@ textarea { min-height: 8rem; resize: vertical; }
       done.classList.add("show");
       done.focus();
     } catch (err) {
-      showStatus("Your request didn't send. Check your connection and try again, or email [YOUR EMAIL].", false);
+      showStatus("Your request didn't send. Check your connection and try again, or message me on Instagram @nicvisions_photography.", false);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Send booking request";

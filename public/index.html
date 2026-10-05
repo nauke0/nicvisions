@@ -12,7 +12,6 @@
   PHOTOS: replace each <div class="photo ..."> placeholder with your own image, e.g.
   <img class="photo arch" src="images/hero-1.jpg" alt="Bikini competitor posing in studio">
   Keep the class names so the shapes stay the same.
-  CONTACT: search for [YOUR EMAIL] and [YOUR INSTAGRAM] and replace them.
 -->
 <style>
 :root {
@@ -121,7 +120,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem;
   .services > div:last-child { grid-column: span 2; max-width: 50%; justify-self: center; }
 }
 @media (max-width: 560px) {
-  .nav a:not(.btn) { display: none; }
+  .nav a:not(.btn):not(.home) { display: none; }
   .arches { grid-template-columns: 1fr 1fr; }
   .arches .photo:nth-child(3) { display: none; }
   .services { grid-template-columns: 1fr; }
@@ -135,9 +134,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem;
   <div class="wrap">
     <a class="brand" href="index.html">NicVisions</a>
     <nav class="nav" aria-label="Main">
+      <a class="home" href="index.html">Home</a>
       <a href="#work">Shoots</a>
       <a href="show-up-package-website.html">The Show Up Package</a>
-      <a class="btn small" href="show-up-package-website.html#book">Book</a>
+      <a class="btn small" href="book.html">Book</a>
     </nav>
   </div>
 </header>
@@ -148,7 +148,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem;
       <h1 class="serif">Strong is <em>beautiful.</em></h1>
       <p class="tag">Female fitness photography in Adelaide.</p>
       <div class="ctas">
-        <a class="btn" href="show-up-package-website.html#book">Book your shoot</a>
+        <a class="btn" href="book.html">Book your shoot</a>
         <a class="btn ghost" href="#work">See the shoots</a>
       </div>
       <div class="arches">
@@ -205,7 +205,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem;
     <div class="wrap">
       <h2 class="serif">Your turn.</h2>
       <p>Limited dates each season.</p>
-      <a class="btn" href="show-up-package-website.html#book">Book your shoot</a>
+      <a class="btn" href="book.html">Book your shoot</a>
     </div>
   </section>
 </main>
@@ -213,7 +213,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 1rem;
 <footer class="site-footer">
   <div class="wrap">
     <span>NicVisions Photography, Adelaide, South Australia</span>
-    <span><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a> &nbsp;|&nbsp; <a href="https://instagram.com/[YOUR INSTAGRAM]">[YOUR INSTAGRAM]</a></span>
+    <span><a href="https://instagram.com/nicvisions_photography">@nicvisions_photography</a></span>
   </div>
 </footer>
 

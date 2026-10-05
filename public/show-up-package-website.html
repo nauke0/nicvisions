@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Show Up Package | [YOUR NAME] Photography</title>
+<title>The Show Up Package | NicVisions Photography</title>
 <meta name="description" content="A done-for-you post-show photoshoot for bikini and WBFF competitors. Hair, makeup, wardrobe and posing handled. You just show up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 
 <!--
   ===================== SETUP (edit these three things) =====================
-  1. Your details: search this file for [YOUR NAME], [YOUR EMAIL] and [YOUR INSTAGRAM].
+  1. Your details: already set to NicVisions and @nicvisions_photography.
   2. Booking form: create a free form at https://formspree.io, copy your form
      endpoint (looks like https://formspree.io/f/abcdwxyz) and paste it into
      FORM_ENDPOINT in the CONFIG near the bottom of this file. Submissions are
@@ -173,7 +173,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
 }
 @media (max-width: 560px) {
   .included, .row { grid-template-columns: 1fr; }
-  .nav a:not(.btn) { display: none; }
+  .nav a:not(.btn):not(.home) { display: none; }
 }
 </style>
 </head>
@@ -181,8 +181,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#home">[YOUR NAME] Photography</a>
+    <a class="brand" href="index.html">NicVisions</a>
     <nav class="nav" aria-label="Main">
+      <a class="home" href="index.html">Home</a>
       <a href="#included">What's included</a>
       <a href="#how">How it works</a>
       <a class="btn small" href="#book">Book your shoot</a>
@@ -197,7 +198,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
       <div>
         <h1>You just show up. <span>I handle the rest.</span></h1>
         <p>You spent months in prep and you've done enough thinking. The Show Up Package is a done-for-you post-show shoot for bikini and WBFF competitors. I plan your looks, shop your wardrobe, book your glam, and direct every pose.</p>
-        <a class="btn" href="#book">Claim your post-show spot</a>
+        <a class="btn" href="claim-your-spot.html">Claim your post-show spot</a>
       </div>
       <!-- Replace this div with your hero photo: <img class="photo-slot arch" src="hero.jpg" alt="Competitor posing after her show"> -->
       <div class="photo-slot arch" role="img" aria-label="Hero photo placeholder">Your hero photo here</div>
@@ -346,8 +347,8 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>[YOUR NAME] Photography</span>
-    <span>[YOUR EMAIL] &nbsp;|&nbsp; [YOUR INSTAGRAM]</span>
+    <span>NicVisions Photography, Adelaide, South Australia</span>
+    <span><a href="https://instagram.com/nicvisions_photography">@nicvisions_photography</a></span>
   </div>
 </footer>
 
@@ -433,7 +434,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
       form.reset();
       showStatus("Booking details sent. I'll be in touch within 48 hours to confirm your date and deposit.", true);
     } catch (err) {
-      showStatus("Your details didn't send. Check your connection and try again, or email [YOUR EMAIL].", false);
+      showStatus("Your details didn't send. Check your connection and try again, or message me on Instagram @nicvisions_photography.", false);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Send my booking details";
